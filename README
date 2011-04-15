@@ -1,0 +1,32 @@
+This is a utility script to help you manage DNS zones in AWS Route 53.
+
+  The primary use is as follows:
+
+Let's say you want your DNS zone managed by AWS but up until now you have been managing your own DNS records on your own nameserver.
+You can use the "sync_zone_to_aws" script to push a local zone to AWS.
+
+If you want to update an existing AWS zone using the zone files/formatting you are used to (Bind,named, etc), you can use this set of 
+scripts as your interface to AWS Route 53.
+
+HOW TO USE:
+
+gem install fog
+gem install dns-ruby
+
+Get yourself an AWS account with Route 53 activated.  You will need to include your AWS ID and secret in the script.
+
+In the script, replace constants appropriately:
+
+### CONSTANTS FOR YOU TO CHANGE --> 
+ZONES_DIR  = '/etc/bind/'
+AWS_KEY_ID = "REPLACE WITH AWS KEY ID"
+AWS_SECRET = "REPLACE WITH AWS SECRET"
+
+Run it!
+
+NOTE: the first argument is the zone domain and the second arg is the local zone file (it must reside in the "ZONES_DIR" - defined as a constant)
+
+ruby sync_zone_to_aws.rb example.com example.com.db
+
+
+
