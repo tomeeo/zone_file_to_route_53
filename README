@@ -1,3 +1,5 @@
+DISCLAIMER:  Anyone using this script should have a solid understanding of DNS before using.  This script will sync zone records to Amazon's DNS Service (Route 53) and if you don't know what you are doing, you could screw something up.  
+
 This is a utility script to help you manage DNS zones in AWS Route 53.
 
   The primary use is as follows:
