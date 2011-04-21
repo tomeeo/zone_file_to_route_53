@@ -93,7 +93,7 @@ if(!records.nil? and records.length > 0)
   puts "Proceed with changes?(y/n)"
   if(STDIN.gets.chomp == 'y')
 	change_batch.each{|change| puts "Here is a change: #{change.inspect}"}
-  	 #dns.change_resource_record_sets(the_zone.id, change_batch, {"comment" => "initial migration from bind"})
+  	 dns.change_resource_record_sets(the_zone.id, change_batch, {"comment" => "initial migration from bind"})
   	 puts "Here are the details of the zone you have updated: "
   	 puts the_zone.inspect
   	end
